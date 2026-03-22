@@ -24,11 +24,14 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-brand-600 to-pink-500 bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #0f766e, #f97316);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-600 to-pink-500 px-8 py-3.5 text-base font-medium text-white shadow-lg shadow-brand-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-600 to-brand-500 px-8 py-3.5 text-base font-medium text-white shadow-lg shadow-brand-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5;
   }
 
   .btn-secondary {

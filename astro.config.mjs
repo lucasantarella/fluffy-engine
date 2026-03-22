@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://aiproductmanager.dev',
+  site: 'https://proompt.io',
   integrations: [
     tailwind({ applyBaseStyles: false }),
     sitemap(),

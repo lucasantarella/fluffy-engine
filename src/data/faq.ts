@@ -5,7 +5,7 @@ export interface FAQItem {
 
 export const faqs: FAQItem[] = [
   {
-    question: 'Does AI PM store my Jira issues?',
+    question: 'Does Proompt store my Jira issues?',
     answer:
       'No. Issue content is fetched from Jira, sent to the AI for review, and the result is returned to you. We don\'t store issue content. Usage metadata (which issue was reviewed, when, scores) is stored for billing and analytics — but never the actual ticket text.',
   },
@@ -27,7 +27,7 @@ export const faqs: FAQItem[] = [
   {
     question: 'Does it work with Jira Data Center (on-premise)?',
     answer:
-      'Not yet. AI PM currently supports Jira Cloud only. Jira Data Center support is on our roadmap.',
+      'Not yet. Proompt currently supports Jira Cloud only. Jira Data Center support is on our roadmap.',
   },
   {
     question: 'Is there a free tier?',

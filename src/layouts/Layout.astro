@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'AI Product Manager — Ship Better Jira Stories Every Sprint',
-  description = 'AI-powered Jira review tool that scores Epics and Stories against your quality standards. Get scorecards, grades, and AI-rewritten drafts in seconds.',
+  title = 'Proompt — Proofread Your Backlog',
+  description = 'Proompt reviews your Jira stories and epics against your team\'s quality standards. AI-powered scoring, findings, and rewrites in seconds.',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -26,7 +26,7 @@ const ogImage = new URL('/og-image.png', Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
-    <meta name="theme-color" content="#a855f7" />
+    <meta name="theme-color" content="#0d9488" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -34,7 +34,7 @@ const ogImage = new URL('/og-image.png', Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:site_name" content="AI Product Manager" />
+    <meta property="og:site_name" content="Proompt" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -58,9 +58,9 @@ const ogImage = new URL('/og-image.png', Astro.site);
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "AI Product Manager",
-        "url": "https://aiproductmanager.dev",
-        "description": "AI-powered Jira review tool for product teams."
+        "name": "Proompt",
+        "url": "https://proompt.io",
+        "description": "Proofread your backlog. AI-powered Jira review tool for product teams."
       }
     </script>
 
@@ -69,7 +69,7 @@ const ogImage = new URL('/og-image.png', Astro.site);
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "AI Product Manager",
+        "name": "Proompt",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "description": "AI-powered Jira review tool that scores Epics and Stories against your quality standards.",
@@ -90,7 +90,7 @@ const ogImage = new URL('/og-image.png', Astro.site);
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Does AI PM store my Jira issues?",
+            "name": "Does Proompt store my Jira issues?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "No. Issue content is fetched from Jira, sent to the AI for review, and the result is returned to you. We don't store issue content."

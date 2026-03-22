@@ -30,7 +30,7 @@ export const features: Feature[] = [
   {
     title: 'AI-Powered Rewriting',
     description:
-      'Don\'t just find problems — fix them. AI PM drafts an improved version of the story that meets your standards, with explanations of what changed and why.',
+      'Don\'t just find problems — fix them. Proompt drafts an improved version of the story that meets your standards, with explanations of what changed and why.',
     icon: '✍️',
   },
   {
@@ -42,7 +42,7 @@ export const features: Feature[] = [
   {
     title: 'Native Jira Integration',
     description:
-      'AI PM lives where you work. An issue panel shows the scorecard right on the Jira issue. An action button triggers reviews. No context switching.',
+      'Proompt lives where you work. An issue panel shows the scorecard right on the Jira issue. An action button triggers reviews. No context switching.',
     icon: '🔌',
   },
   {
@@ -60,7 +60,7 @@ export const features: Feature[] = [
   {
     title: 'Knowledge-Aware Reviews',
     description:
-      'Connect your Confluence docs, architecture decisions, and domain glossaries. AI PM uses them as context so reviews understand your domain.',
+      'Connect your Confluence docs, architecture decisions, and domain glossaries. Proompt uses them as context so reviews understand your domain.',
     icon: '🧠',
   },
 ];
