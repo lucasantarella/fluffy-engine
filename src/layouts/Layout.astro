@@ -1,0 +1,173 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'AI Product Manager — Ship Better Jira Stories Every Sprint',
+  description = 'AI-powered Jira review tool that scores Epics and Stories against your quality standards. Get scorecards, grades, and AI-rewritten drafts in seconds.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.png', Astro.site);
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="theme-color" content="#a855f7" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="AI Product Manager" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AI Product Manager",
+        "url": "https://aiproductmanager.dev",
+        "description": "AI-powered Jira review tool for product teams."
+      }
+    </script>
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AI Product Manager",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "AI-powered Jira review tool that scores Epics and Stories against your quality standards.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free plan with up to 3 seats and 50 AI reviews per month."
+        }
+      }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does AI PM store my Jira issues?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Issue content is fetched from Jira, sent to the AI for review, and the result is returned to you. We don't store issue content."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use my own AI provider?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Bring Your Own Key (BYOK) mode lets you supply your own Anthropic, OpenAI, Azure OpenAI, or AWS Bedrock credentials."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a review take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "10–15 seconds for a single story. Bulk reviews of an entire sprint take 1–3 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize the scoring criteria?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Completely. Adjust dimensions, weights, and rubric definitions per issue type. Add custom dimensions for your domain."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a free tier?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The Free plan supports up to 3 seats and 50 AI reviews per month. No credit card required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What AI models are used?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By default, Claude Sonnet 4 by Anthropic. Claude Opus 4, GPT-4o, and Claude Haiku 4.5 are also supported."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-800 antialiased">
+    <slot />
+
+    <!-- Scroll-triggered fade-in animations -->
+    <script>
+      function initFadeObserver() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
+        );
+
+        document.querySelectorAll('.fade-in-section').forEach((el) => {
+          observer.observe(el);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFadeObserver);
+      } else {
+        initFadeObserver();
+      }
+    </script>
+  </body>
+</html>

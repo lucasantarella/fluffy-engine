@@ -1,0 +1,164 @@
+---
+const integrations = [
+  {
+    name: 'Jira Cloud',
+    description: 'Issues & projects',
+    status: 'launch',
+    logoSrc: '/partner-logos/Jira_icon.svg',
+  },
+  {
+    name: 'Confluence',
+    description: 'Wiki & spaces',
+    status: 'launch',
+    logoSrc: '/partner-logos/Confluence_icon.svg',
+  },
+  {
+    name: 'Claude',
+    description: 'Sonnet & Opus',
+    status: 'launch',
+    logoSrc: '/partner-logos/claude-color.svg',
+  },
+  {
+    name: 'AWS Bedrock',
+    description: 'Stays in your VPC',
+    status: 'launch',
+    logoSrc: '/partner-logos/bedrock-color.svg',
+  },
+  {
+    name: 'OpenAI',
+    description: 'GPT-4o support',
+    status: 'launch',
+    logoSrc: '/partner-logos/openai-svgrepo-com.svg',
+  },
+  {
+    name: 'Azure OpenAI',
+    description: 'Enterprise AI',
+    status: 'launch',
+    logoSrc: '/partner-logos/azure-openai.svg',
+  },
+  {
+    name: 'Slack',
+    description: 'Notifications',
+    status: 'roadmap',
+    logoSrc: '/partner-logos/Slack_icon_2019.svg',
+  },
+  {
+    name: 'MS Teams',
+    description: 'Notifications',
+    status: 'roadmap',
+    logoSrc: '/partner-logos/teams.svg',
+  },
+  {
+    name: 'Webhooks',
+    description: 'Push events',
+    status: 'roadmap',
+    logoSrc: null,
+    inlineSvg: `<svg viewBox="0 0 24 24" class="h-9 w-9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3" stroke="#6b7280"/><circle cx="5" cy="18" r="3" stroke="#6b7280"/><circle cx="19" cy="18" r="3" stroke="#6b7280"/><path d="M12 8v2.5l-5.5 5M12 10.5l5.5 5" stroke="#6b7280"/></svg>`,
+  },
+];
+
+const bullets = [
+  'Native Jira Cloud integration via Forge app',
+  'Import standards from Confluence pages',
+  'Choose your LLM: Claude, GPT-4o, or Bedrock',
+  'Slack & Teams notifications coming soon',
+];
+---
+
+<section id="integrations" class="bg-slate-50/50 py-24 sm:py-32">
+  <div class="section-container">
+    <div class="fade-in-section mb-4 flex items-center gap-4">
+      <span class="font-serif text-lg text-slate-300">03</span>
+      <span class="h-px w-10 bg-slate-300"></span>
+      <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">Integrations</p>
+    </div>
+
+    <div class="flex flex-col gap-12 lg:flex-row lg:gap-20">
+      <!-- Left: Text content -->
+      <div class="fade-in-section flex-1 lg:max-w-md">
+        <h2 class="font-serif text-4xl leading-tight text-slate-900 sm:text-5xl">
+          Connected to every tool your team uses
+        </h2>
+
+        <p class="mt-6 text-lg leading-relaxed text-slate-600">
+          Review stories in Jira, pull standards from Confluence, choose your AI provider — all
+          without leaving your workflow.
+        </p>
+
+        <ul class="mt-8 space-y-4">
+          {
+            bullets.map((bullet) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brand-500" />
+                <span class="text-slate-600">{bullet}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="mt-10 flex items-end gap-6">
+          <div>
+            <span class="font-serif text-4xl text-brand-600">9+</span>
+            <p class="text-sm text-slate-500">integrations available</p>
+          </div>
+          <a
+            href="#"
+            class="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 transition-colors hover:text-brand-600"
+          >
+            Learn more
+            <svg
+              class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Logo grid -->
+      <div class="fade-in-section flex-1">
+        <div class="grid grid-cols-3 gap-3 sm:gap-4">
+          {
+            integrations.map((integration) => (
+              <div
+                class={`group flex flex-col items-center rounded-2xl border bg-white p-5 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6 ${
+                  integration.status === 'launch'
+                    ? 'border-slate-200'
+                    : 'border-dashed border-slate-200'
+                }`}
+              >
+                <div class="flex h-10 w-10 items-center justify-center sm:h-12 sm:w-12">
+                  {integration.logoSrc ? (
+                    <img
+                      src={integration.logoSrc}
+                      alt={`${integration.name} logo`}
+                      class="h-9 w-9 object-contain"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <Fragment set:html={integration.inlineSvg} />
+                  )}
+                </div>
+                <h3 class="mt-3 text-sm font-semibold text-slate-900">{integration.name}</h3>
+                <p
+                  class={`mt-0.5 text-xs ${
+                    integration.status === 'launch'
+                      ? 'text-slate-500'
+                      : 'font-medium text-brand-500'
+                  }`}
+                >
+                  {integration.status === 'launch' ? integration.description : 'Coming soon'}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
