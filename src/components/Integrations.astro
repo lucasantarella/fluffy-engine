@@ -1,52 +1,54 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const integrations = [
   {
     name: 'Jira Cloud',
     description: 'Issues & projects',
     status: 'launch',
-    logoSrc: '/partner-logos/Jira_icon.svg',
+    logoSrc: `${base}/partner-logos/Jira_icon.svg`,
   },
   {
     name: 'Confluence',
     description: 'Wiki & spaces',
     status: 'launch',
-    logoSrc: '/partner-logos/Confluence_icon.svg',
+    logoSrc: `${base}/partner-logos/Confluence_icon.svg`,
   },
   {
     name: 'Claude',
     description: 'Sonnet & Opus',
     status: 'launch',
-    logoSrc: '/partner-logos/claude-color.svg',
+    logoSrc: `${base}/partner-logos/claude-color.svg`,
   },
   {
     name: 'AWS Bedrock',
     description: 'Stays in your VPC',
     status: 'launch',
-    logoSrc: '/partner-logos/bedrock-color.svg',
+    logoSrc: `${base}/partner-logos/bedrock-color.svg`,
   },
   {
     name: 'OpenAI',
     description: 'GPT-4o support',
     status: 'launch',
-    logoSrc: '/partner-logos/openai-svgrepo-com.svg',
+    logoSrc: `${base}/partner-logos/openai-svgrepo-com.svg`,
   },
   {
     name: 'Azure OpenAI',
     description: 'Enterprise AI',
     status: 'launch',
-    logoSrc: '/partner-logos/azure-openai.svg',
+    logoSrc: `${base}/partner-logos/azure-openai.svg`,
   },
   {
     name: 'Slack',
     description: 'Notifications',
     status: 'roadmap',
-    logoSrc: '/partner-logos/Slack_icon_2019.svg',
+    logoSrc: `${base}/partner-logos/Slack_icon_2019.svg`,
   },
   {
     name: 'MS Teams',
     description: 'Notifications',
     status: 'roadmap',
-    logoSrc: '/partner-logos/teams.svg',
+    logoSrc: `${base}/partner-logos/teams.svg`,
   },
   {
     name: 'Webhooks',
